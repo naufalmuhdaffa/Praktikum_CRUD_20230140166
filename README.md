@@ -1,6 +1,6 @@
-# 📸 Hasil Screenshot
+# Screenshot
 
-## 🖥️ Output UI
+## Output UI
 
 | Keterangan | Screenshot |
 |------------|------------|
@@ -8,12 +8,121 @@
 
 ---
 
-## 🔗 Test API
+# Documentation: User API Spec
 
-| Endpoint | Screenshot |
-|----------|------------|
-| **GET /api/users** (Get All Users) | <img src="https://github.com/user-attachments/assets/e7b68849-3a5e-4374-af9e-c1ebc1425cf4" width="600"/> |
-| **GET /api/users/{id}** (Get By ID) | <img src="https://github.com/user-attachments/assets/6fb8dc79-9541-499c-89b5-8ab19504aeb5" width="600"/> |
-| **POST /api/users** (Add User) | <img src="https://github.com/user-attachments/assets/8a413c1c-8b41-44ee-8151-205ab92ac174" width="600"/> |
-| **PUT /api/users/{id}** (Update User) | <img src="https://github.com/user-attachments/assets/c8cba132-42ca-4d6d-aa2b-384d7c35bab7" width="600"/> |
-| **DELETE /api/users/{id}** (Delete User) | <img src="https://github.com/user-attachments/assets/f93483f2-63b9-44e1-9ede-9854d25e9b85" width="600"/> |
+## Create User
+
+Endpoint : POST /api/users
+
+Request Body :
+
+```json
+{
+  "name": "Nopal",
+  "age": 21
+}
+```
+
+Response Body (Success, 201 Created) :
+
+```json
+{
+  "status": "success",
+  "data": {
+    "id": "c32f39d6-1b1a-44b8-b6f9-0e6ef10ea5ad",
+    "name": "Nopal",
+    "age": 21
+  }
+}
+```
+
+---
+
+## Get All Users
+
+Endpoint : GET /api/users
+
+Response Body (Success, 200 OK) :
+
+```json
+{
+  "status": "success",
+  "data": [
+    {
+      "id": "89b32b44-eea5-4c22-9dfd-54d19be9197c",
+      "name": "Naufal Muhammad Daffa",
+      "age": 22
+    }
+  ]
+}
+```
+
+---
+
+## Get User By ID
+
+Endpoint : GET /api/users/{id}
+
+Example :  
+GET /api/users/89b32b44-eea5-4c22-9dfd-54d19be9197c
+
+Response Body (Success, 200 OK) :
+
+```json
+{
+  "status": "success",
+  "data": {
+    "id": "89b32b44-eea5-4c22-9dfd-54d19be9197c",
+    "name": "Naufal Muhammad Daffa",
+    "age": 22
+  }
+}
+```
+
+---
+
+## Update User
+
+Endpoint : PUT /api/users/{id}
+
+Example :  
+PUT /api/users/c32f39d6-1b1a-44b8-b6f9-0e6ef10ea5ad
+
+Request Body :
+
+```json
+{
+  "name": "Daffa",
+  "age": 22
+}
+```
+
+Response Body (Success, 200 OK) :
+
+```json
+{
+  "status": "success",
+  "data": {
+    "id": "c32f39d6-1b1a-44b8-b6f9-0e6ef10ea5ad",
+    "name": "Daffa",
+    "age": 22
+  }
+}
+```
+
+---
+
+## Delete User
+
+Endpoint : DELETE /api/users/{id}
+
+Example :  
+DELETE /api/users/c32f39d6-1b1a-44b8-b6f9-0e6ef10ea5ad
+
+Response Body (Success, 200 OK) :
+
+```json
+{
+  "status": "success delete user with id c32f39d6-1b1a-44b8-b6f9-0e6ef10ea5ad"
+}
+```
